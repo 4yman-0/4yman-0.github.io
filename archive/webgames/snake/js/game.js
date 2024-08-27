@@ -3,6 +3,7 @@ import DOM from './gameDOM.js';
 let gameState = {
     // head first, then body and tail
     snake: [[1, 0], [0, 0]],
+    inputBuffer: [""],
     dir: [0, 0],
     apple: [4, 4],
     score: 0,
@@ -11,6 +12,7 @@ let gameState = {
 
     reset (){
         gameState.snake = [[1, 0], [0, 0]];
+        gameState.inputBuffer = [""];
         gameState.dir = [0, 0];
         gameState.apple =  [4, 4];
         gameState.score = 0;
@@ -18,7 +20,7 @@ let gameState = {
     }
 };
 
-const Game = {
+const game = {
     gridSize: 9,
     /**
      * @type {CanvasRenderingContext2D}
@@ -29,24 +31,24 @@ const Game = {
 
     startGame() {
         gameState.reset();
-        Game.updateScore();
+        game.updateScore();
         DOM.hideModal();
-        Game.gameLoop = setInterval(Game.frame, 150);
+        game.gameLoop = setInterval(game.frame, 150);
     },
-    changeDir (dir){
-        if(Game.moved) return;
-        Game.moved = true;
+    changeDir (key){
+        if(game.moved) return;
+        game.moved = true;
 
-        if (dir === "ArrowUp" && gameState.dir[1] != 1) {
+        if (key === "ArrowUp" && gameState.dir[1] != 1) {
             gameState.dir[0] = 0;
             gameState.dir[1] = -1;
-        } else if (dir === "ArrowDown" && gameState.dir[1] != -1) {
+        } else if (key === "ArrowDown" && gameState.dir[1] != -1) {
             gameState.dir[0] = 0;
             gameState.dir[1] = 1;
-        } else if (dir === "ArrowLeft" && gameState.dir[0] != 1) {
+        } else if (key === "ArrowLeft" && gameState.dir[0] != 1) {
             gameState.dir[0] = -1;
             gameState.dir[1] = 0;
-        } else if (dir === "ArrowRight" && gameState.dir[0] != -1) {
+        } else if (key === "ArrowRight" && gameState.dir[0] != -1) {
             gameState.dir[0] = 1;
             gameState.dir[1] = 0;
         }
@@ -54,7 +56,7 @@ const Game = {
     growSnake (){
         gameState.freezeTail = true;
         gameState.score++;
-        Game.updateScore();
+        game.updateScore();
     },
     updateScore (){
         DOM.Score.innerText = `Score: ${gameState.score}`;
@@ -66,12 +68,17 @@ const Game = {
                     part[1] == gameState.apple[1];
         })) {
             gameState.apple = [
-                ~~(Math.random() * Game.gridSize),
-                ~~(Math.random() * Game.gridSize)
+                ~~(Math.random() * game.gridSize),
+                ~~(Math.random() * game.gridSize)
             ];
         }
     },
     frame (){
+        if (gameState.inputBuffer[0] !== "") {
+            game.changeDir(gameState.inputBuffer.shift());
+        }
+
+
         if (gameState.dir[0] != 0 ||
             gameState.dir[1] != 0) {
             // Update head
@@ -87,32 +94,32 @@ const Game = {
             gameState.freezeTail = false;
         }
 
-        Game.moved = false;
+        game.moved = false;
 
         // Check snake body is out of wall or no
-        if (gameState.snake[0][0] < 0 || gameState.snake[0][0] > Game.gridSize ||
-            gameState.snake[0][1] < 0 || gameState.snake[0][1] > Game.gridSize) {
-            Game.endGame();
+        if (gameState.snake[0][0] < 0 || gameState.snake[0][0] > game.gridSize ||
+            gameState.snake[0][1] < 0 || gameState.snake[0][1] > game.gridSize) {
+            game.endGame();
         }
 
         for (let i = 1; i < gameState.snake.length; i++) {
             // Check snake head hit body or no
             if (i !== 0 && gameState.snake[0][1] === gameState.snake[i][1] &&
                     gameState.snake[0][0]        === gameState.snake[i][0]) {
-                Game.endGame();
+                game.endGame();
             }
         }
 
         if (gameState.snake[0][0] === gameState.apple[0] &&
             gameState.snake[0][1] === gameState.apple[1]) {
-            Game.growSnake();
-            Game.newApple();
+            game.growSnake();
+            game.newApple();
         }
 
-        Game.render();
+        game.render();
     },
     render (){
-        const ctx = Game.gameCanvas;
+        const ctx = game.gameCanvas;
 
         ctx.clearRect(0, 0, 400, 400);
 
@@ -147,11 +154,11 @@ const Game = {
         );
     },
     endGame() {
-        clearInterval(Game.gameLoop);
+        clearInterval(game.gameLoop);
         gameState.over = true;
         gameState.reset();
         DOM.showModal();
     }
 };
 
-export default Game;
+export { game, gameState };

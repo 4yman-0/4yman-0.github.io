@@ -26,10 +26,10 @@ main, .modal, #game{
     margin-bottom: 2vh;
 }
 
-#mode-modal button,
+#mode-modal .button,
 #restart {
     padding: 2vh 4vw;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 #game {
@@ -52,7 +52,8 @@ main, .modal, #game{
 
 .board {
     width: 300px;
-    height: 300px;
+    min-width: 25vw;
+    aspect-ratio: 1/1;
 
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -61,8 +62,6 @@ main, .modal, #game{
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +93,7 @@ main, .modal, #game{
     transform: rotate(-45deg);
 }
 
-/* Y */
+/* O */
 .board.o .cell:not(.x):hover::before,
 .cell.o::before ,
 .board.o .cell:not(.x):hover::after,
@@ -110,7 +109,7 @@ main, .modal, #game{
 .cell.o::after {
     width: 70px;
     height: 70px;
-    background: var(--bg-1);
+    background: var(--bg-2);
 }
 
 .board .cell:hover {

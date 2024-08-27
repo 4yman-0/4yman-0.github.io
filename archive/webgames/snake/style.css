@@ -16,7 +16,7 @@ main, #game{
     width: 100vw;
     height: 100vh;
     padding: 2%;
-    background: var(--bg-2);
+    background: var(--bg-1);
 }
 
 #mode-modal h2 {
@@ -98,4 +98,3 @@ main, #game{
     padding: 2rem 4rem;
     font-size: 1.5em;
 }
-
