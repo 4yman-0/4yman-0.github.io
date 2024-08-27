@@ -51,9 +51,8 @@
     margin: 0;
 }
 
-.contact {
-    background: var(--bg-1);
-}
+/*.contact {
+}*/
 
 .contact__txt {
     margin-bottom: 1rem;

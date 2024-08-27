@@ -39,6 +39,10 @@
 }
 
 body {
+    /* Compatibility  */
+    color: #EEE;
+    background: #222;
+
     color: var(--fg);
     background: var(--bg-1);
     font-family: var(--font-1);
