@@ -1,7 +1,7 @@
-
 section, .footer {
-    padding: 4vh 1rem;
+    padding: 1rem;
 }
+
 
 
 .header {
@@ -20,7 +20,6 @@ section, .footer {
     padding: .2rem .5rem;
     background: var(--primary);
     border-radius: .4rem;
-    font-size: 1.5rem;
 }
 
 .nav-list {
@@ -35,7 +34,6 @@ section, .footer {
 @media (max-width: 470px) {
     .header {
         height: 50px;
-        padding: .2rem .5rem;
     }
 
     .logo {
@@ -47,11 +45,14 @@ section, .footer {
     }
 }
 
+
+
 .footer {
-    padding: 1rem;
+    line-height: 1.4;
     background: var(--bg-2);
-    font-size: .8rem;
 }
+
+
 
 .links-grid {
     display: grid;
@@ -72,6 +73,8 @@ section, .footer {
     color: var(--fg-1);
     background-color: var(--bg-2);
 }
+
+
 
 .links-flex {
     display: flex;

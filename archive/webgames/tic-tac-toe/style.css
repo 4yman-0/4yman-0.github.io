@@ -66,7 +66,6 @@ main, .modal, #game{
     justify-content: center;
     align-items: center;
 
-    background: var(--bg-2);
     border: 1px solid var(--fg);
 }
 
@@ -110,7 +109,7 @@ main, .modal, #game{
 .cell.o::after {
     width: 70px;
     height: 70px;
-    background: var(--bg-1);
+    background: var(--bg-2);
 }
 
 .board .cell:hover {

@@ -19,7 +19,7 @@
         --fg-1: #CCC;
         --fg-2: #AAA;
         --primary: #797;
-        --secondary: #668;
+        --secondary: #336;
         --teritary: #BB9;
     }
 }
@@ -48,19 +48,6 @@ body {
     font-family: var(--font-1);
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin: .5rem 0;
-}
-
-p {
-    font-size: 1rem;
-}
-
 a {
     color: var(--primary);
     padding: 0.2rem;
@@ -85,14 +72,14 @@ a:active{
     transition: background 0.1s linear;
 }
 
-.button.focus {
+.button--focus {
     background: var(--bg-3);
     outline: 1px solid var(--fg-2);
 }
 
-.button.focus:hover,
-.button.focus:focus,
-.button.focus:active {
+.button--focus:hover,
+.button--focus:focus,
+.button--focus:active {
     color: var(--fg);
     background: var(--secondary);
     outline-color: var(--primary);

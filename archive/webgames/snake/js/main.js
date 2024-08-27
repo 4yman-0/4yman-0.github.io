@@ -1,19 +1,27 @@
 import DOM from './gameDOM.js';
-import Game from './game.js';
+import { game, gameState } from './game.js';
 
 // Event Listeners
-DOM.restart.addEventListener("click", Game.startGame);
+DOM.restart.addEventListener("click", game.startGame);
 
 document.addEventListener("keydown", (evt) => {
     // Prevent hold
-    if ( evt.repeat ) return;
+    if (evt.repeat) return;
+    if (!evt.key.startsWith("Arrow")) return;
 
-    Game.changeDir(evt.key)
+    gameState.inputBuffer.unshift(evt.key);
 });
 
-DOM.mobileButtons[0].addEventListener("click", () => Game.changeDir("ArrowUp"));
-DOM.mobileButtons[1].addEventListener("click", () => Game.changeDir("ArrowLeft"));
-DOM.mobileButtons[2].addEventListener("click", () => Game.changeDir("ArrowDown"));
-DOM.mobileButtons[3].addEventListener("click", () => Game.changeDir("ArrowRight"));
+DOM.mobileButtons[0].addEventListener("click",
+    () => gameState.inputBuffer.unshift("ArrowUp"));
 
-Game.startGame();
+DOM.mobileButtons[1].addEventListener("click",
+    () => gameState.inputBuffer.unshift("ArrowLeft"));
+
+DOM.mobileButtons[2].addEventListener("click",
+    () => gameState.inputBuffer.unshift("ArrowDown"));
+
+DOM.mobileButtons[3].addEventListener("click",
+    () => gameState.inputBuffer.unshift("ArrowRight"));
+
+game.startGame();
