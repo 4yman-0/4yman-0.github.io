@@ -19,7 +19,7 @@ section, .footer {
 
 .logo {
     padding: .2rem .5rem;
-    background: var(--color-1);
+    background: var(--primary);
     border-radius: .4rem;
     font-size: 1.5rem;
 }
