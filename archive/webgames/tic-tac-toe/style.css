@@ -56,6 +56,8 @@ main, .modal, #game{
 
     display: grid;
     grid-template-columns: repeat(3, auto);
+
+    background: var(--bg-2);
 }
 
 .cell {
@@ -65,7 +67,7 @@ main, .modal, #game{
     justify-content: center;
     align-items: center;
 
-    border: 1px solid var(--text);
+    border: 1px solid var(--fg);
 }
 
 .cell::before,
@@ -112,12 +114,12 @@ main, .modal, #game{
 }
 
 .board .cell:hover {
-    --cell-color: #999;
+    --cell-color: var(--fg-2);
 }
 
 .cell.x,
 .cell.o {
-    --cell-color: var(--text) !important;
+    --cell-color: var(--fg) !important;
     cursor: not-allowed;
 }
 

@@ -24,11 +24,6 @@ main, #game{
     margin-bottom: 2vh;
 }
 
-#restart {
-    padding: 2vh 4vw;
-    font-size: 1.5em;
-}
-
 #game {
     display: flex;
     flex-direction: column;
@@ -43,7 +38,7 @@ main, #game{
 #game-canvas {
     max-width: 95vw;
     aspect-ratio: 1/1;
-    border: 1px solid var(--text);
+    border: 1px solid var(--fg);
 }
 
 #mobile-controls {
@@ -98,3 +93,9 @@ main, #game{
         display: none;
     }
 }
+
+.button {
+    padding: 2rem 4rem;
+    font-size: 1.5em;
+}
+
