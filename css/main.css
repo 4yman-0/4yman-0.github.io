@@ -9,7 +9,7 @@
     --primary: #787;
     --secondary: #446;
     --teritary: #886;
-    --font-1: "Noto Sans", Roboto, sans-serif;
+    --font-1: "Noto Sans", sans-serif;
     --font-2: "Ubuntu Mono", "Courier New", monospace;
 }
 
@@ -72,6 +72,12 @@ a:active{
     transition: background 0.1s linear;
 }
 
+@media (prefers-reduced-motion){
+	.button {
+		transition: none;
+	}
+}
+
 .button--focus {
     background: var(--bg-3);
     outline: 1px solid var(--fg-2);
@@ -97,5 +103,5 @@ a:active{
 ::-webkit-scrollbar-thumb {
     background: var(--fg-2);
     border-radius: 2px;
-    cursor: ns-resize;
+    cursor: grab;
 }
