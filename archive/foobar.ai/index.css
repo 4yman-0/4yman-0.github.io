@@ -1,3 +1,19 @@
+/* VARIABLES */
+
+:root {
+    --bg-1: #050505;
+    --bg-2: #111;
+    --bg-3: #222;
+    --primary: #45F;
+    --secondary: #8ea;
+    --teritary: #8ae;
+}
+
+.color {
+	color: var(--secondary);
+	padding: 0;
+}
+
 .header {
     padding: 0 1.5rem;
 }
@@ -39,6 +55,7 @@
 }
 
 .cards {
+	display: flex;
     margin-top: 1rem;
 }
 
@@ -47,8 +64,7 @@
     flex: 0 0 auto;
     width: 40%;
     min-width: 300px;
-    height: 10rem;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 0 .2rem;
     background: var(--bg-3);
     border-radius: .5rem;
@@ -63,8 +79,12 @@
     color: var(--text-grayed);
 }
 
+.horiz-scroll {
+	overflow-x: scroll;
+}
+
 .solutions {
-    padding-top: 20vh;
+    padding-top: 15vh;
 }
 
 .solutions__title {
