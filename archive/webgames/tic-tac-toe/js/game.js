@@ -1,5 +1,5 @@
 import { DOM, Players, GameModes } from './constants.js';
-import AI from './ai.js';
+import AIMove from './ai.js';
 
 const Game = {
     cells: [
@@ -31,7 +31,7 @@ const Game = {
         ];
         Game.updateBoard();
         if (Game.difficulty === GameModes.NORMAL && Game.turn === Players.O) {
-            AI.move();
+            AIMove();
         }
     },
 

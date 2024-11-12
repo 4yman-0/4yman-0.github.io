@@ -9,16 +9,16 @@ let gameState = {
     score: 0,
     over: false,
     freezeTail: false,
-
-    reset (){
-        gameState.snake = [[1, 0], [0, 0]];
-        gameState.inputBuffer = [""];
-        gameState.dir = [0, 0];
-        gameState.apple =  [4, 4];
-        gameState.score = 0;
-        gameState.over = false;
-    }
 };
+
+function resetGameState (){
+    gameState.snake = [[1, 0], [0, 0]];
+    gameState.inputBuffer = [""];
+    gameState.dir = [0, 0];
+    gameState.apple =  [4, 4];
+    gameState.score = 0;
+    gameState.over = false;
+}
 
 const game = {
     gridSize: 9,
@@ -30,7 +30,7 @@ const game = {
     moved: false,
 
     startGame() {
-        gameState.reset();
+        resetGameState();
         game.updateScore();
         DOM.hideModal();
         game.gameLoop = setInterval(game.frame, 150);
@@ -74,10 +74,8 @@ const game = {
         }
     },
     frame (){
-        if (gameState.inputBuffer[0] !== "") {
+        if (gameState.inputBuffer[0] !== "")
             game.changeDir(gameState.inputBuffer.shift());
-        }
-
 
         if (gameState.dir[0] != 0 ||
             gameState.dir[1] != 0) {
@@ -96,14 +94,14 @@ const game = {
 
         game.moved = false;
 
-        // Check snake body is out of wall or no
+        // Check snake body is out of wall or not
         if (gameState.snake[0][0] < 0 || gameState.snake[0][0] > game.gridSize ||
             gameState.snake[0][1] < 0 || gameState.snake[0][1] > game.gridSize) {
             game.endGame();
         }
 
         for (let i = 1; i < gameState.snake.length; i++) {
-            // Check snake head hit body or no
+            // Check snake head hit body or not
             if (i !== 0 && gameState.snake[0][1] === gameState.snake[i][1] &&
                     gameState.snake[0][0]        === gameState.snake[i][0]) {
                 game.endGame();
@@ -156,7 +154,7 @@ const game = {
     endGame() {
         clearInterval(game.gameLoop);
         gameState.over = true;
-        gameState.reset();
+        resetGameState();
         DOM.showModal();
     }
 };

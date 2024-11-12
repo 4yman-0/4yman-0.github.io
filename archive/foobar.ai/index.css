@@ -14,10 +14,6 @@
 	padding: 0;
 }
 
-.header {
-    padding: 0 1.5rem;
-}
-
 .header__links {
     display: flex;
     gap: .8rem;
@@ -32,7 +28,7 @@
 .hero__container {
 	display: inline-block;
 	padding: 1rem;
-	background: rgba(0, 0, 10, .6);
+	background: #2C2C32;
 	border-radius: 1rem;
 }
 
@@ -47,11 +43,6 @@
 .hero__btn {
     width: fit-content;
     margin-left: auto;
-    text-align: center;
-}
-
-.why-foobar {
-    padding-top: 20vh;
 }
 
 .cards {
@@ -84,7 +75,7 @@
 }
 
 .solutions {
-    padding-top: 15vh;
+    padding: 3rem .4rem;
 }
 
 .solutions__title {
@@ -151,17 +142,17 @@
 }
 
 .integrations {
-    padding-top: 15vh;
     background: var(--bg-2);
 }
 
 .integrations__title  {
     text-align: center;
-    margin-bottom: 10vh;
+    margin-bottom: 3rem;
+    font-size: 2rem;
 }
 
 .integrations__list {
-    margin-bottom: 8vh;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

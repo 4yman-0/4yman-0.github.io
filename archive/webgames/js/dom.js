@@ -1,3 +1,11 @@
-const $ = (id) => document.getElementById(id);
-const $q = (q) => document.querySelector(q);
-const $qa = (qa) => document.querySelectorAll(qa);
+function $(id) {
+	return document.getElementById(id);
+}
+
+function $q(q) {
+	return document.querySelector(q);
+}
+
+function $qa(q) {
+	return document.getElementById(q);
+}

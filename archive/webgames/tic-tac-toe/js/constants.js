@@ -10,7 +10,6 @@ const DOM = {
     board: $('game-board'),
     cells: $qa('.cell'),
 
-
     swapModals() {
         DOM.modeModal.classList.toggle('hidden');
         DOM.winModal.classList.toggle('hidden');
