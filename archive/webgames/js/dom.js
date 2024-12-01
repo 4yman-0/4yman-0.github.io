@@ -7,5 +7,5 @@ function $q(q) {
 }
 
 function $qa(q) {
-	return document.getElementById(q);
+	return document.querySelectorAll(q);
 }
