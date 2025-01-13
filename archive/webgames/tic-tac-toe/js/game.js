@@ -74,7 +74,7 @@ const Game = {
         }
         Game.swapTurn();
         if (Game.difficulty === GameModes.NORMAL && Game.turn === Players.O) {
-            AI.move();
+            AIMove();
         }
         Game.updateBoard();
     },
