@@ -5,10 +5,10 @@ function AIMove() {
     const availableMoves = [];
 
     // Collect all available moves (empty cells)
-	Game.cells.forEach(col => {
+	Game.cells.forEach((col, colIndex) => {
 		col.forEach(cell => {
-			if (Game.cells[col][cell] === Players.EMPTY) {
-				availableMoves.push({ col, cell });
+			if (col[cell] === Players.EMPTY) {
+				availableMoves.push({ col: colIndex, cell });
 			}
 		});
 	});
