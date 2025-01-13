@@ -7,8 +7,8 @@ function AIMove() {
     // Collect all available moves (empty cells)
 	Game.cells.forEach(col => {
 		col.forEach(cell => {
-			if (Game.cells[x][y] === Players.EMPTY) {
-				availableMoves.push({ x, y });
+			if (Game.cells[col][cell] === Players.EMPTY) {
+				availableMoves.push({ col, cell });
 			}
 		});
 	});
@@ -19,7 +19,7 @@ function AIMove() {
 
     // Pick a random move from available moves
     const randomMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
-    Game.captureCell(randomMove.x, randomMove.y);
+    Game.captureCell(randomMove.col, randomMove.cell);
 }
 
 export default AIMove;
