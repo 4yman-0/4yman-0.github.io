@@ -1,13 +1,5 @@
 /* VARIABLES */
 
-:root {
-    --bg-1: #050505;
-    --bg-2: #111;
-    --bg-3: #222;
-    --primary: #45F;
-    --secondary: #8ea;
-    --teritary: #8ae;
-}
 
 .color {
 	color: var(--secondary);
@@ -119,7 +111,7 @@
 }
 
 .feature {
-    color: var(--text-grayed);
+    color: var(--fg-2);
 }
 
 .feature--yes {
@@ -178,7 +170,7 @@
 
     .integrations__list {
 		padding: 2rem 0;
-		background: var(--bg);
+		background: var(--bg-1);
 		border-radius: 8px;
 	}
 

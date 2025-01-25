@@ -1,14 +1,5 @@
 /* VARIABLES */
 
-:root {
-    --bg-1: #050505;
-    --bg-2: #111;
-    --bg-3: #222;
-    --primary: #45F;
-    --secondary: #8ea;
-    --teritary: #8ae;
-}
-
 .header {
     padding: .5rem 1rem;
     display: flex;
