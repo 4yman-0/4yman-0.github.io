@@ -1,7 +1,7 @@
 /* VARIABLES */
 :root {
     --bg-1: #000;
-    --bg-2: #111;
+    --bg-2: #0A0A0A;
     --bg-3: #1F1F1F;
     --fg: #EEE;
     --fg-1: #AAA;
@@ -51,7 +51,6 @@ body {
 a {
     color: var(--primary);
     padding: 0.2rem;
-    text-decoration: none;
 }
 
 a:hover,
@@ -65,11 +64,10 @@ a:active{
     display: block;
     padding: 0.4rem .8rem;
     text-align: center;
-    cursor: pointer;
     border-radius: 4px;
     background: var(--bg-3);
     font-weight: 700;
-    transition: background 0.1s linear;
+    transition: background 0.2s linear;
 }
 
 @media (prefers-reduced-motion){

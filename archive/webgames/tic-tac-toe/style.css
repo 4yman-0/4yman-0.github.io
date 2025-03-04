@@ -66,6 +66,7 @@ main, .modal, #game{
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
     border: 1px solid var(--fg);
 }
 
@@ -120,10 +121,4 @@ main, .modal, #game{
 .cell.o {
     --cell-color: var(--fg) !important;
     cursor: not-allowed;
-}
-
-@media (min-width: 768px) {
-    .cell {
-        cursor: pointer;
-    }
 }

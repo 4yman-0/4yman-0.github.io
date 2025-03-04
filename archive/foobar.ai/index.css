@@ -1,6 +1,3 @@
-/* VARIABLES */
-
-
 .color {
 	color: var(--secondary);
 	padding: 0;
@@ -9,11 +6,10 @@
 .header__links {
     display: flex;
     gap: .8rem;
+    margin: 0 1rem;
 }
 
 .hero {
-    min-height: 100vh;
-    padding-top: 30vh;
     background: #999;
 }
 
@@ -60,10 +56,6 @@
 
 .card__txt {
     color: var(--text-grayed);
-}
-
-.horiz-scroll {
-	overflow-x: scroll;
 }
 
 .solutions {

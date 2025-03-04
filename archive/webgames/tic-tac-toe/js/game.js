@@ -29,6 +29,7 @@ const Game = {
             [0, 0, 0],
             [0, 0, 0]
         ];
+        DOM.board.classList.add(Game.turn === Players.X ? "x" : "o");
         Game.updateBoard();
         if (Game.difficulty === GameModes.NORMAL && Game.turn === Players.O) {
             AIMove();

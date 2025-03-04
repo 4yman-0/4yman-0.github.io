@@ -9,7 +9,8 @@ html {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline dotted;
+    cursor: pointer;
 }
 
 h1 {

@@ -8,7 +8,6 @@ section, .footer {
     z-index: 1000;
     padding: .3rem 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: var(--bg-2);
     border-bottom: var(--bg-1) 1px solid;
@@ -23,6 +22,7 @@ section, .footer {
 .nav-list {
     display: flex;
     gap: 1rem;
+    margin: 0 1rem;
 }
 
 .nav-list-item {
